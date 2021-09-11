@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: 'mongo'
+    ports:
+      - '27017-27019:27017-27019'
+    volumes:
+      - db-data:/data/db
+      - mongo-config:/config/docker_db
+
+volumes:
+  mongo-config:
+  db-data:

@@ -9,12 +9,16 @@ dotenv.config({ path: './config/config.env'});
 // load models
 const Bootcamp = require('./models/Bootcamp');
 
-// connect to DB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  autoIndex: true,
-  useUnifiedTopology: true
-});
+// connect to DB 
+
+// mongoose.connect(process.env.MONGO_URI, {       // atlas
+//   useNewUrlParser: true,
+//   autoIndex: true,
+//   useUnifiedTopology: true
+// });
+
+const connectDB = require('./config/docker_db');  
+connectDB();
 
 // read JSON files
 const bootcamps = JSON.parse(

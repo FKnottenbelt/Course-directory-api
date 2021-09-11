@@ -1,7 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-const connectDB = require('./config/db');
+//const connectDB = require('./config/db');  // connect via atlas
+const connectDB = require('./config/docker_db');
 const colors = require('colors');
 const errorHandler = require('./middleware/error'); 
 

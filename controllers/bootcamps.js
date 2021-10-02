@@ -25,7 +25,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
   queryStr = queryStr.replace(mongooseOperatorsRegex, match => `$${match}`);
 
   // Finding resource (filtered)
-  let query = Bootcamp.find(JSON.parse(queryStr));
+  let query = Bootcamp.find(JSON.parse(queryStr)).populate('courses');
   
   // Select Fields
   if (req.query.select) {
